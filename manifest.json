@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "boing",
+  "version": "0.3.0",
+  "description": "Replace any text on web pages with your own words. Click the icon to edit the rules.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "boing"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["boing.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
